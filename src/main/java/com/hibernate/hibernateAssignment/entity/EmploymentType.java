@@ -21,12 +21,20 @@ public abstract class EmploymentType {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     @OneToMany(mappedBy = "employmentType")
+    @JsonIgnore
     List<Employee> employmentTypes = new ArrayList<>();
     public EmploymentType() {
-        super();
     }
 
     public EmploymentType(Integer id) {
+        this.id = id;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
         this.id = id;
     }
 }

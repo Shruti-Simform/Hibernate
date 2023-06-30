@@ -8,6 +8,7 @@ import java.util.List;
 @Service
 public interface EmployeeService {
     public List<Employee> findAllEmployee();
-    public Employee findById(Integer empId);
+    public Employee findEmployeeById(Integer empId);
     public Employee insertEmployee(Employee employee);
+    public void deleteEmployee(Integer empId);
 }

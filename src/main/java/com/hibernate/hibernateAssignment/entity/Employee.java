@@ -20,13 +20,22 @@ public class Employee {
     @Column(name = "emp_name")
     private String empName;
 
-//    @Embedded
-//    private Address address;
+    @Embedded
+    private Address address;
+
     @ManyToOne
     private Department department;
 
     @ManyToOne
     private EmploymentType employmentType;
+
+    public Address getAddress() {
+        return address;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
+    }
 
     public Department getDepartment() {
         return department;
@@ -42,5 +51,16 @@ public class Employee {
 
     public void setEmploymentType(EmploymentType employmentType) {
         this.employmentType = employmentType;
+    }
+
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "empId=" + empId +
+                ", empName='" + empName + '\'' +
+                ", address=" + address +
+                ", department=" + department +
+                ", employmentType=" + employmentType +
+                '}';
     }
 }
